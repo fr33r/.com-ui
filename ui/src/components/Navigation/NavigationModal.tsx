@@ -9,6 +9,8 @@ const NavModal = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
+  position: fixed;
+  background-color: ${props => props.theme.backgroundColor};
 `;
 
 /*

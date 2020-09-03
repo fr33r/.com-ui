@@ -18,13 +18,15 @@ const NavListItem = styled.li`
  */
 interface Props {
 	label: string;
+	onClick?: Function
 }
 
 /*
  * Component representing a single item in the navigation list.
  */
 const NavigationListItem: React.FC<Props> = props => {
-	return <NavListItem>{props.label}</NavListItem>
+	const handleClick = () => props.onClick ? props.onClick() : () => {}
+	return <NavListItem onClick={handleClick}>{props.label}</NavListItem>
 };
 
 export default NavigationListItem;

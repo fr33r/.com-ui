@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const NavButton = styled.button`
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   right: 0rem;
   top: 0rem;
   border: none;
