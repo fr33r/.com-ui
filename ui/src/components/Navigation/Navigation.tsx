@@ -9,6 +9,7 @@ const Nav = styled.nav``;
  */
 interface Props {
 	items: string[];
+	onNavItemClick: Function
 }
 
 /*
@@ -17,7 +18,7 @@ interface Props {
 const Navigation: React.FC<Props> = props => {
 	return (
 		<Nav>
-			<NavigationList items={props.items} />
+			<NavigationList items={props.items} onNavItemClick={props.onNavItemClick} />
 		</Nav>
 	);
 };

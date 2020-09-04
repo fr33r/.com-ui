@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react";
 
-const Description = styled.header`
+const Description = styled.p`
   font-size: ${(props)=> props.theme.fontSizes.small};
   text-align: justify;
   text-justify: inter-word;

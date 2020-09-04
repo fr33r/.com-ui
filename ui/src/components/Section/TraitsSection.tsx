@@ -1,6 +1,10 @@
 import React from "react";
 import Section, { Props } from "./Section";
-import { Grid, Row, Col } from "react-flexbox-grid";
+import SectionHeader from "./SectionHeader";
+import SectionGrid from "./SectionGrid";
+import SectionRow from "./SectionRow";
+import TraitList from "./TraitList";
+import { Col } from "react-flexbox-grid";
 import { Trait } from "../../types";
 
 /*
@@ -16,13 +20,16 @@ interface TraitsProps extends Props {
 const TraitsSection: React.FC<TraitsProps> = props => {
 	return (
 		<Section>
-			<Grid fluid>
-				<Row>
-					<Col>X</Col>
-					<Col>Y</Col>
-					<Col>Z</Col>
-				</Row>
-			</Grid>
+			<SectionGrid fluid>
+				<SectionRow middle="xs" around="xs">
+					<Col xs={6}>
+						<TraitList items={props.traits} />
+					</Col>
+					<Col xs={6}>
+						<SectionHeader>{"about"}</SectionHeader>
+					</Col>
+				</SectionRow>
+			</SectionGrid>
 		</Section>
 	);
 };

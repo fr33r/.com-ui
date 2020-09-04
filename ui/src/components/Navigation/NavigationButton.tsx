@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const NavButton = styled.button`
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   right: 0rem;
   top: 0rem;
   border: none;
@@ -30,6 +30,7 @@ const NavButton = styled.button`
  * Properties defined for the navigation button.
  */
 interface Props {
+	show: boolean
 	onClick?: Function;
 }
 
@@ -37,14 +38,12 @@ interface Props {
  * Represents the component responsible for showing and hiding the navigation.
  */
 const NavigationButton: React.FC<Props> = props => {
-	const [toggled, setToggled] = React.useState<boolean>(false);
 	const handleClick = () => {
-		setToggled(!toggled); // set view state internally for onClick.
 		if (props.onClick) {
 			props.onClick(); // execute the provided onClick handler.
 		}
 	};
-	return <NavButton onClick={handleClick}>{toggled ? "×" : "="}</NavButton>;
+	return <NavButton onClick={handleClick}>{props.show ? "×" : "="}</NavButton>;
 };
 
 export default NavigationButton;

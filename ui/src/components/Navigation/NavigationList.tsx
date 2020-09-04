@@ -3,11 +3,11 @@ import styled from "styled-components";
 import NavigationListItem from "./NavigationListItem";
 
 const NavList = styled.ul`
-  list-style: none;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-  position: relative;
+	list-style: none;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
 `;
 
 /*
@@ -15,6 +15,7 @@ const NavList = styled.ul`
  */
 interface Props {
 	items: string[];
+	onNavItemClick: Function;
 }
 
 /*
@@ -24,7 +25,11 @@ const NavigationList: React.FC<Props> = props => {
 	return (
 		<NavList>
 			{props.items.map((item: string, idx: number) => (
-				<NavigationListItem key={idx} label={item} />
+				<NavigationListItem
+					key={idx}
+					label={item}
+					onClick={props.onNavItemClick}
+				/>
 			))}
 		</NavList>
 	);

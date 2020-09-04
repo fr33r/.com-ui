@@ -6,7 +6,7 @@ const Section = styled.section`
 `
 
 export interface Props {
-	header: string
+	reverse?: boolean
 }
 
 export default Section;

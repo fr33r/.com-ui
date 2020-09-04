@@ -11,6 +11,7 @@ const NavModal = styled.div`
   height: 100vh;
   position: fixed;
   background-color: ${props => props.theme.backgroundColor};
+  z-index: 1;
 `;
 
 /*
@@ -19,6 +20,7 @@ const NavModal = styled.div`
 interface Props {
 	items: string[]
 	show: boolean
+	onNavItemClick: Function
 }
 
 /*
@@ -27,7 +29,7 @@ interface Props {
 const NavigationModal: React.FC<Props> = props => {
 	return (
 		<NavModal show={props.show}>
-			<Navigation items={props.items}/>
+			<Navigation items={props.items} onNavItemClick={props.onNavItemClick}/>
 		</NavModal>
 	);
 }

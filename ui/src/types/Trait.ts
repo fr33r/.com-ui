@@ -1,1 +1,3 @@
-export interface Trait {}
+export interface Trait {
+	description: string;
+}
